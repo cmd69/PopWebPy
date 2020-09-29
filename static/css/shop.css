@@ -1,0 +1,155 @@
+
+.main-wrapper{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+}
+
+.wizboink {
+    /*padding-top: 15px;
+    padding-bottom: 15px;*/
+    /*margin-bottom: 30px;*/
+    background-color: white;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.wizboink > h1{
+    font-weight: bolder;
+    color: black;
+}
+
+.wizboink-container{
+    /*background-image: url("/static/media/images/bn4.jpg");*/
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.search {
+    border: 1.5px solid #676767;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+.search-bar div{
+    width: 62px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+
+}
+
+.search-bar span{
+    height: 26px;
+    display: flex;
+    align-self: center;
+    margin-right: 5px;
+}
+
+.nvbtn{
+    padding: 10px 20px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    height: 34px;
+    width: 53px;
+}
+
+.nvbtn:hover{
+    /*width: 58px;
+    height: 39px;*/
+
+}
+
+.product-display {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 10px;
+    column-gap: 3%;
+    /*background-color: #5A58D7;*/
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.item-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    background-color: white;
+    border-radius: 5px;
+    /*border: 1px solid rgba(0, 0, 0, .125);*/
+    padding: .75rem;
+}
+
+.item-img {
+    width:150px;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+}
+
+.card-body{
+    display: grid;
+    grid-template-rows: 15% auto 15%;
+    grid-template-columns: repeat(2, 1fr);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 16px;
+    height: 170px;
+}
+
+.card-footer{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.item-name {
+    font-weight: bolder;
+    font-size: 16px;
+    color: black;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.item-desc {
+    font-size: 14px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-right: 40px;
+}
+
+.item-price{
+    width: 50px;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.cart-button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 90px;
+}
+

@@ -1,0 +1,244 @@
+{% load static %}
+{% url 'home' as home %}
+{% url 'album' as album %}
+{% url 'prices' as prices %}
+{% url 'login' as login %}
+{% url 'logout' as logout %}
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar-responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dropdown-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/burger-menu.css' %}">
+    <!--<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.css">-->
+    <!-- import Swal from 'sweetalert2/dist/sweetalert2.js'-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <title>Base</title>
+</head>
+    <body class="noneone">
+
+        <div class="wrapper">
+            <div class="burger-menu">
+                <link rel="stylesheet" type="text/css" href="{% static 'css/burger-menu.css' %}">
+                <div class="burger-lines" id="bg-lines" onclick="onClickBurger()">
+                    <div class="line" id="line1"></div>
+                    <div class="line" id="line2"></div>
+                    <div class="line" id="line3"></div>
+                </div>
+
+                <nav class="burger-display" id="bg-nav">
+                    <ul class="burger-links">
+                        <li class="link"><a href="/album">Home</a></li>
+                        <li class="link"><a href="/shop">Shop</a></li>
+                        <li class="link"><a href="/game">Game</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bubble-bg" id="bubble-bg"></div>
+
+            <div class="logo">
+                <a href="../album">
+                    <img class="img-logo" src="{% static 'media/images/AndroidQ.png' %}" alt="logo">
+                </a>
+                <h1 style="margin: 0px" class="name">Android Q</h1>
+            </div>
+
+            <div class="nav-container">
+                <nav class="nav-display">
+                    <ul class="nav-links">
+                        <li class="link"><a href="/album">Home</a></li>
+                        <li class="link"><a href="/shop">Shop</a></li>
+                        <li class="link"><a href="/game">Game</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="others">
+                <div class="carro">
+                    <div class="cart-img"><img class="img-bag" style="width: 30px; height: 30px; cursor: pointer" src="{% static 'media/images/bag2.png' %}"></div>
+                    <div class="cart-number">0</div>
+                </div>
+
+                <div class="user">
+
+                    {% if user.is_authenticated %}
+                        <div class="user-arrow-options" id="user-arrow-options" onclick="onClickProfile()">
+                            <div id="icons-div" class="icons-div">
+                                <img class="img-user" style="width: 35px; height: 35px; top:10px; cursor: pointer;" src="{% static 'media/images/user2.png' %}">
+                                <img class="img-arrow" style="cursor: pointer; width: 25px; height: 30px" id="sort-down" src="{% static 'media/images/sort-down.png' %}">
+                            </div>
+
+                            <div class="dropdownMenu">
+                                <div class="arrow-up" id="dm-arrow"></div>
+
+                                <div class="profile-wrapper dropdown-wrapper"; id="dm-options">
+
+                                    <div class="element" id="login-info"><p class="dropdown-elem">Usuario: nasamigra</p></div>
+
+                                    <div class="element"><img class="dropdown-elem" id="img-user" src="{% static 'media/images/user2.png' %}"></div>
+                                    <div class="element"><a class="dropdown-elem">Mi Perfil</a></div>
+
+
+                                    <div class="element"><img class="dropdown-elem" id="img-heart" src="{% static 'media/images/heart.png' %}"></div>
+                                    <div class="element"><a class="dropdown-elem">Favoritos</a></div>
+
+
+                                    <div class="element"><img class="dropdown-elem" id="img-history" src="{% static 'media/images/history.png' %}"></div>
+                                    <div class="element"><a class="dropdown-elem">Historial</a></div>
+
+
+                                    <div class="settings">
+                                        <a href="/logout"><img class="dropdown-elem" id="img-shutdown" src="{% static 'media/images/shutdown.png' %}"></a>
+                                        <img class="dropdown-elem" id="img-settings" src="{% static 'media/images/settings.png' %}">
+                                    </div>
+                                </div>
+
+                                <div id="popup-confirm"></div>
+
+                            </div>
+
+                            <div class="dropdownMenu">
+
+                                <form>
+                                    <div class="login-wrapper dropdown-wrapper"; id="">
+
+                                        <div class="element name"><p class="dropdown-elem">LOGIN</p></div>
+
+
+                                        <div class="login-data element double-option-div">
+                                            <div>
+                                                <input type="text" placeholder=" Email or username">
+                                                <i class="far fa-envelope"></i>
+                                            </div>
+                                            <div>
+                                                <input id="xpswrd" type="password" placeholder=" Password">
+                                                <i class="fas fa-lock"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="element">
+                                            <input type="submit" value="Sign in">
+                                        </div>
+
+                                        <div class="bottom-options element">
+                                            <a href="#">Forgot Password?</a>
+                                            <a href="#">Don't have an account?</a>
+                                        </div>
+                                </div>
+                                </form>
+
+                            </div>
+
+                            <div class="dropdownMenu">
+
+                                <form method="POST" action="">
+                                    <div class="register-wrapper dropdown-wrapper"; id="">
+
+                                        <div class="element name"><p class="dropdown-elem">REGISTER</p></div>
+
+                                        <div class="register-data element double-option-div">
+                                            <div>
+                                                <input type="text" placeholder=" Username">
+                                                <i class="far fa-user-circle"></i>
+                                            </div>
+                                            <div>
+                                                <input type="text" placeholder=" Email">
+                                                <i class="far fa-envelope"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="double-option-div element">
+                                            <div>
+                                                <input id="pswrd" type="password" placeholder=" Password">
+                                                <i class="fas fa-lock"></i>
+                                            </div>
+                                            <div>
+                                                <input id="rpswrd" type="password" placeholder=" Repit password">
+                                                <i class="fas fa-lock"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="element">
+                                            <input type="submit" value="Sign in">
+                                        </div>
+
+                                        <div class="bottom-options element">
+                                            <a href="#">Forgot Password?</a>
+                                            <a href="#">Don't have an account?</a>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    {% else %}
+                        <div id="icons-div" class="icons-div">
+                            <img class="img-user" style="width: 35px; height: 35px; top:10px; cursor: pointer;" src="{% static 'media/images/account.png' %}">
+                            <a href="/login">Login</a>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}
+            {% endblock %}
+
+        <!-- <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script> -->
+
+        <!--
+        <script>
+            $('#img-shutdown').click(function(e){
+
+            })
+        </script>
+        -->
+
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+        <!--<script type="text/javascript">
+            $(document).mouseup(function (event){
+               if ($(event.target).closest(".profile-wrapper").length === 0) {
+                   console.log("im here");
+                   $(".profile-wrapper").hide();
+               }
+            });
+        </script>-->
+
+        <!-- <script type="text/javascript">
+            $(document).mouseup(function (event){
+                var dropdownLogin = $('.profile-wrapper')
+                var arrow = $(".arrow-up")
+                var icons = $(".icons-div")
+               if (!dropdownLogin.is(event.target) && !icons.is(event.target) && dropdownLogin.has(event.target).length === 0) {
+                   console.log("im here");
+                   dropdownLogin.hide();
+                   arrow.hide();
+               }
+            });
+        </script> -->
+
+
+        <script src="{% static 'js/burger.js' %}" type="text/javascript" charset="utf-8"></script>
+
+    </body>
+</html>

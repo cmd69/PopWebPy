@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block dropdown-menu %}
+
+    <div class="dropdownMenu">
+        <div class="arrow-up" id="dm-arrow"></div>
+
+        <div class="profile-wrapper"; id="dm-options">
+
+            <div class="element" id="login-info"><p class="dropdown-elem">Usuario: nasamigra</p></div>
+
+            <div class="element"><img class="dropdown-elem" id="img-user" src="{% static 'media/images/user2.png' %}"></div>
+            <div class="element"><a class="dropdown-elem">Mi Perfil</a></div>
+
+
+            <div class="element"><img class="dropdown-elem" id="img-heart" src="{% static 'media/images/heart.png' %}"></div>
+            <div class="element"><a class="dropdown-elem">Favoritos</a></div>
+
+
+            <div class="element"><img class="dropdown-elem" id="img-history" src="{% static 'media/images/history.png' %}"></div>
+            <div class="element"><a class="dropdown-elem">Historial</a></div>
+
+
+            <div class="settings">
+                <img class="dropdown-elem" id="img-shutdown" src="{% static 'media/images/shutdown.png' %}">
+                <img class="dropdown-elem" id="img-settings" src="{% static 'media/images/settings.png' %}">
+            </div>
+
+        </div>
+    </div>
+    <script src="{% static 'js/burger.js' %}" type="text/javascript" charset="utf-8"></script>
+
+
+{% endblock %}
