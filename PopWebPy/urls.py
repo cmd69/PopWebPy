@@ -38,6 +38,7 @@ urlpatterns = [
     path('shop/', shop),
     path('register/', user_views.register, name='Register'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='Login'),
+    path('logout/', user_views.user_logout),
 ]
 
 if settings.DEBUG:
