@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block bm %}
+{% load static %}
+
+
+    <div class="burger-menu">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/burger-menu.css' %}">
+        <div class="burger-lines" id="bg-lines" onclick="onClickBurger()">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+        </div>
+        <nav class="burger-display" id="bg-nav">
+            <ul class="burger-links">
+                <li class="link"><a href="/album">Home</a></li>
+                <li class="link"><a href="/prices">Prices</a></li>
+                <li class="link"><a href="/game">Game</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="bubble-bg" id="bubble-bg"></div>
+
+    <script src="{% static 'js/burger.js' %}" type="text/javascript" charset="utf-8"></script>
+
+{% endblock %}

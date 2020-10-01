@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    /*background-color: #2b2b39;*/
+    background-color: #1b1b26;
+    align-items: center !important; /*vertically aligned*/
+    height: 80px;
+    box-sizing: border-box;
+    /* TEST */
+}
+
+
+.logo{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    right: 38%;
+}
+
+.img-logo {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+}
+
+.name {
+    font-size: 22px;
+    color: white;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto !important;
+}
+
+.others{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    right: 2%;
+
+}
+
+.carro{
+    position: relative;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.cart-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cart-number{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.img-bag{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user{
+    padding-left: 15px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.user-arrow-options{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icons-div {
+    margin-bottom: 10px;
+}
+
+
+.body-grid {
+    position: relative;
+    height: 100%;
+}
+
+
+.nav-container{
+    display: none;
+}
+
+.search-bar{
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        background-color: #2b2b39;
+        /*align-items: center !important;*//* vertically aligned*/
+        height: 80px;
+    }
+
+    .nav-container {
+        display: flex;
+        position: absolute;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: inline-flex;
+        margin-bottom: 0;
+    }
+
+    .nav-links > .link {
+        display: table-cell;
+        list-style: none;
+        text-align: center;
+        vertical-align: middle;
+        transition: all 0.3s ease 0s;
+        color: white;
+        margin-right: 40px;
+    }
+
+    .link:last-child {
+        margin-right: 0px;
+    }
+
+    .nav-links > a:hover {
+        color: #007bff;
+    }
+
+    .nav-links a {
+        display: block;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto !important;
+        font-weight: 500;
+        font-size: 26px;
+        color: #edf0f1;
+        text-decoration: none;
+    }
+
+    .logo {
+        display: inline-flex;
+        position: absolute;
+        align-items: center;
+        left: 2%;
+
+    }
+
+    .others {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        right: 2%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .logo {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        margin-right: 30%;
+    }
+
+    .name {
+        display: none;
+    }
+}

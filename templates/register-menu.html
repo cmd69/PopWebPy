@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block dd_content %}
+    <body>
+        <div class="dropdownMenu">
+            <form method="POST" action="">
+                <div class="register-wrapper dropdown-wrapper"; id="">
+
+                    <div class="element name"><p class="dropdown-elem">REGISTER</p></div>
+
+                    <div class="register-data element double-option-div">
+                        <div>
+                            <input type="text" placeholder=" Username">
+                            <i class="far fa-user-circle"></i>
+                        </div>
+                        <div>
+                            <input type="text" placeholder=" Email">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                    </div>
+
+                    <div class="double-option-div element">
+                        <div>
+                            <input id="pswrd" type="password" placeholder=" Password">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div>
+                            <input id="rpswrd" type="password" placeholder=" Repit password">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+
+                    <div class="element">
+                        <input type="submit" value="Sign in">
+                    </div>
+
+                    <div class="bottom-options element">
+                        <a href="#">Forgot Password?</a>
+                        <a href="#">Don't have an account?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shop.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <body class="main-wrapper">
+
+        <section class="wizboink text-center">
+            <div class="container wizboink-container">
+                <h1 class="nombre">Productos</h1>
+                <!-- <p class="strong">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                <div class="search-bar">
+                    <span><input class="search" type="text"></span>
+                    <div><button class="nvbtn" type="submit"><i class="fa fa-search"></i></button></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="product-display">
+
+            {% for result in data %}
+                <div class="item-card">
+                    <img class="item-img" src={{ result.img_url }}>
+                    <div class="card-body">
+                        <p class="item-name">{{ result.nombre }}</p>
+                        <p class="item-desc">Quisque non enim vulputate nunc pretium ornare non id diam. Sed quis est placerat, congue orci non, ullamcorper leo.</p>
+
+                        <div class="card-footer">
+                            <u class="item-price">{{ result.precio }}€</u>
+                            <button class="cart-button">Add to cart</button>
+                            <img class="heart-img" style="width: 20px; height: auto"src="{% static 'media/images/red-heart.png' %}">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+{% endblock %}
