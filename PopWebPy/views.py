@@ -21,6 +21,7 @@ def prices(request):
 
 def shop(request):
     result = Articulo.objects.all()
+
     return render(request, 'shop.html', {"data": result})
 
 

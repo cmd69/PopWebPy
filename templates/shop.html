@@ -29,7 +29,7 @@
 
                         <div class="card-footer">
                             <u class="item-price">{{ result.precio }}€</u>
-                            <button class="cart-button">Add to cart</button>
+                            <button data-product={{ result.id }} data-action="add" class="cart-button update-cart">Add to cart</button>
                             <img class="heart-img" style="width: 20px; height: auto"src="{% static 'media/images/red-heart.png' %}">
                         </div>
                     </div>
@@ -38,10 +38,13 @@
 
         </div>
 
+
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/cart.js' %}" type="text/javascript" charset="utf-8"></script>
 
 
 {% endblock %}

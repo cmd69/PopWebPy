@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <title>Base</title>
+
+    <script type="text/javascript">
+        var userName = {{ user.username }}
+    </script>
+
 </head>
     <body class="noneone">
 
@@ -70,7 +75,7 @@
 
                     {% if user.is_authenticated %}
                         <div class="user-arrow-options" id="user-arrow-options" onclick="onClickProfile()">
-                            <div id="icons-div" class="icons-div">
+                            <div id="icons-div" class="icons-div" style="margin-bottom: 10px;">
                                 <img class="img-user" style="width: 35px; height: 35px; top:10px; cursor: pointer;" src="{% static 'media/images/user2.png' %}">
                                 <img class="img-arrow" style="cursor: pointer; width: 25px; height: 30px" id="sort-down" src="{% static 'media/images/sort-down.png' %}">
                             </div>
